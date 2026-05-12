@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX POST Input</title>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h2>AJAX POST with Input</h2>
+
+<input type="text" id="name" placeholder="Enter your name">
+<button id="btn">Send</button>
+
+<div id="result"></div>
+
+<script>
+$(document).ready(function(){
+
+    $('#btn').click(function(){
+
+        let name = $('#name').val();
+
+  
+        
+
+        $.ajax({
+            url: "data.php",
+            type: "POST",
+            data: { name: name },
+
+            success: function(response){
+              console.log(response);
+            },
+
+            error: function(){
+                console.log("failed")
+            }
+        });
+
+    });
+
+});
+</script>
+
+</body>
+</html>
