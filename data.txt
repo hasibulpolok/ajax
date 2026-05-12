@@ -1,0 +1,1 @@
+Hello Polok! This is Ajax response.
