@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text, Color & Photo</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+        }
+
+        #box{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            font-size: 35px;
+            font-weight: bold;
+            color: white;
+        }
+
+        #box img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <img id="photo" src="https://picsum.photos/id/101/200/200">
+        <span id="text">Nature</span>
+    </div>
+
+    <script>
+
+        let i = 0;
+
+        const bgColors = ["red", "blue", "green", "orange", "purple"];
+        const textColors = ["white", "yellow", "cyan", "pink", "lime"];
+
+        const photos = [
+            "https://picsum.photos/id/101/200/200",
+            "https://picsum.photos/id/102/200/200",
+            "https://picsum.photos/id/103/200/200",
+            "https://picsum.photos/id/104/200/200",
+            "https://picsum.photos/id/105/200/200"
+        ];
+
+        const texts = [
+            "Nature",
+            "Mountain",
+            "River",
+            "Forest",
+            "Sky"
+        ];
+
+        setInterval(function () {
+
+    
+            $("#box").css({
+                "background-color": bgColors[i],
+                "color": textColors[i]
+            });
+
+        
+            $("#photo").attr("src", photos[i]);
+
+          
+            $("#text").text(texts[i]);
+
+            i++;
+
+            if(i >= photos.length){
+                i = 0;
+            }
+
+        }, 1000);
+
+    </script>
+
+</body>
+</html>

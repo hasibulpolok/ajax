@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Color Change</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+        }
+
+        #box{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">Hello World</div>
+
+    <script>
+        const bgColors = ["red", "blue", "green", "orange", "purple", "black"];
+        const textColors = ["white", "yellow", "cyan", "pink", "lime"];
+
+        setInterval(function () {
+
+      
+            let randomBg =
+                bgColors[Math.floor(Math.random() * bgColors.length)];
+
+  
+            let randomText =
+                textColors[Math.floor(Math.random() * textColors.length)];
+
+       
+            $("#box").css({
+                "background-color": randomBg,
+                "color": randomText
+            });
+
+        }, 2000);
+    </script>
+
+</body>
+</html>
